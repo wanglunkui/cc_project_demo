@@ -2,45 +2,83 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.wlk.android.job_club.MainActivity">
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh_layout"
+    android:layout_height="match_parent">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <android.support.v4.widget.NestedScrollView
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="http/swipe" />
+
+        <Button
+            android:id="@+id/btn_2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="recyclerview" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <LinearLayout
+
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
 
-                <EditText
-                    android:id="@+id/account"
-                    android:layout_width="200dp"
-                    android:layout_height="55dp"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="@android:color/black" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/password"
-                    android:layout_width="200dp"
-                    android:layout_height="55dp"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="@android:color/black" />
+                    <EditText
+                        android:id="@+id/account"
+                        android:layout_width="200dp"
+                        android:layout_height="55dp"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@android:color/black" />
 
-                <Button
-                    android:id="@+id/login"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:text="确定"
-                    android:textColor="@android:color/black" />
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="200dp"
+                        android:layout_height="55dp"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@android:color/black" />
 
-            </LinearLayout>
-        </android.support.v4.widget.NestedScrollView>
-    </android.support.v4.widget.SwipeRefreshLayout>
+                    <Button
+                        android:id="@+id/login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:text="确定"
+                        android:textColor="@android:color/black" />
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/layout2"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </FrameLayout>
 
 </FrameLayout>

@@ -51,4 +51,19 @@ dependencies {
     compile 'org.greenrobot:greendao:3.2.2' // add library
     /////
 
+    ////fresco + picture
+
+
+
+
+
+
+
+
+
+
+    /////无所谓
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:cardview-v7:23.2.1'
 }
