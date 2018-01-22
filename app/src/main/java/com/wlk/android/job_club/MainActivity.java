@@ -2,12 +2,15 @@ package com.wlk.android.job_club;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 
 import com.wlk.android.job_club.http.HttpUtil;
 import com.wlk.android.job_club.ui.BaseActivity;
@@ -26,6 +29,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private RecyclerAdapter adapter = new RecyclerAdapter(this, data);
     private Handler handler = new Handler();
     boolean isLoading;
+    DrawerLayout drawerLayout;
+    private int lastX;
+    private FrameLayout mainLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +44,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         recyclerView = findViewById(R.id.recycler_view);
         findViewById(R.id.btn_1).setOnClickListener(this);
         findViewById(R.id.btn_2).setOnClickListener(this);
+        initSlidingMenu();
     }
 
     private void initRecyclerView(){
@@ -121,6 +128,40 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 initData();
                 break;
         }
+    }
+
+    private void initSlidingMenu(){
+        drawerLayout = findViewById(R.id.drawable_layout);
+        mainLayout = findViewById(R.id.main_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout,
+                null, R.string.action_settings,R.string.action_settings) {
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+            }
+
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                super.onDrawerSlide(drawerView, slideOffset);
+                int width = drawerView.getWidth();
+                int left = (int) (width * slideOffset);
+                int scrollX = left - lastX;
+                mainLayout.scrollBy(-scrollX, 0);
+                lastX = left;
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+                super.onDrawerStateChanged(newState);
+            }
+        };
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
     }
 
     public void initData() {
