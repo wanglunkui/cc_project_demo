@@ -1,5 +1,7 @@
 package com.wlk.android.job_club;
 
+import android.animation.ObjectAnimator;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
@@ -11,7 +13,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.wlk.android.job_club.http.HttpUtil;
 import com.wlk.android.job_club.ui.BaseActivity;
 import com.wlk.android.job_club.ui.RecyclerAdapter;
@@ -45,6 +49,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn_1).setOnClickListener(this);
         findViewById(R.id.btn_2).setOnClickListener(this);
         initSlidingMenu();
+        initFresco();
+    }
+
+    private void initFresco(){
+        final SimpleDraweeView simpleDraweeView = findViewById(R.id.fresco_img);
+        simpleDraweeView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Uri uri = Uri.parse("res://com.wlk.android.job_club/"+R.drawable.test2);
+                simpleDraweeView.setImageURI(uri);
+            }
+        }, 3000);
     }
 
     private void initRecyclerView(){
@@ -114,8 +130,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login:
-                HttpUtil.login(getAccount().getText().toString(),
-                        getPassword().getText().toString(), this);
+//                HttpUtil.login(getAccount().getText().toString(),
+//                        getPassword().getText().toString(), this);
+                showAnimation();
                 break;
             case R.id.btn_1:
                 swipeRefreshLayout.setVisibility(View.VISIBLE);
@@ -134,7 +151,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         drawerLayout = findViewById(R.id.drawable_layout);
         mainLayout = findViewById(R.id.main_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout,
-                null, R.string.action_settings,R.string.action_settings) {
+                null, R.string.action_settings,R.string.app_name) {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
@@ -162,6 +179,31 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         };
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+    }
+
+    private void showAnimation(){
+        mainLayout.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                float x = findViewById(R.id.btn_1).getPivotX();
+                float y = findViewById(R.id.btn_1).getPivotY();
+                TextView textView = new TextView(mainLayout.getContext());
+                textView.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams( 200, 90);
+                mainLayout.addView(textView, layoutParams);
+                ObjectAnimator animatorX = ObjectAnimator.ofFloat(textView, "translationX",
+                        x,
+                        x+10,
+                        x+2,
+                        x-3,
+                        x-9,
+                        x-1,
+                        x+2,
+                        x);
+                animatorX.setDuration(2000);
+                animatorX.start();
+            }
+        }, 3000);
     }
 
     public void initData() {

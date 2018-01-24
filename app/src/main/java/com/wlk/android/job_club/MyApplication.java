@@ -2,6 +2,7 @@ package com.wlk.android.job_club;
 
 import android.app.Application;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.wlk.android.job_club.database.DaoFactory;
 import com.wlk.android.job_club.database.DaoSession;
 import com.wlk.android.job_club.database.TestData;
@@ -27,6 +28,7 @@ public class MyApplication extends Application {
         dao.update(data);
         dao.delete(data);
         session.load(TestData.class, 1L);
-        session.queryRaw(TestData.class, "sql", "args");
+        Fresco.initialize(this);
+//        session.queryRaw(TestData.class, "sql", "args");
     }
 }
