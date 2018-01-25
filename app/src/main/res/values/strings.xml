@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">job-club</string>
     <string name="action_settings">Settings</string>
+    <string name="action_settings1">Settings %s ad</string>
+    <string name="action_settings2">@string/action_settings1</string>
+    <string name="action_settings3">中文</string>
+    <string name="action_settings4"> </string>
+
+    <array name="a2">
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+        <item>周日</item>
+    </array>
 </resources>
