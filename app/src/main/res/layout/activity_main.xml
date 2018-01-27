@@ -79,7 +79,10 @@
                                 android:layout_gravity="center_horizontal"
                                 android:text="确定"
                                 android:textColor="@android:color/black" />
-
+                            <ImageView
+                                android:id="@+id/raw_img"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
                         </LinearLayout>
                     </android.support.v4.widget.NestedScrollView>
                 </android.support.v4.widget.SwipeRefreshLayout>

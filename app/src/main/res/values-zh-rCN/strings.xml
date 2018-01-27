@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">job-club</string>
+    <string name="assets_introduction_png">introduction-zh-rCN.png</string>
+    <string name="assets_info_html">info-zh-rCN.html</string>
 </resources>

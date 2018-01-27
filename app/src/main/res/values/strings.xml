@@ -15,4 +15,6 @@
         <item>周六</item>
         <item>周日</item>
     </array>
+    <string name="assets_introduction_png">introduction.png</string>
+    <string name="assets_info_html">info.html</string>
 </resources>

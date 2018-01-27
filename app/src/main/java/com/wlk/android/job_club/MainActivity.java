@@ -126,6 +126,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         return (EditText) findViewById(R.id.password);
     }
 
+    private void initRawImg(){
+        getResources().openRawResource(R.raw.ic_launcher);
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
