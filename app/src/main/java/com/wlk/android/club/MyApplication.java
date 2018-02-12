@@ -1,12 +1,12 @@
-package com.wlk.android.job_club;
+package com.wlk.android.club;
 
 import android.app.Application;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.wlk.android.job_club.database.DaoFactory;
-import com.wlk.android.job_club.database.DaoSession;
-import com.wlk.android.job_club.database.TestData;
-import com.wlk.android.job_club.database.TestDataDao;
+import com.wlk.android.club.database.DaoFactory;
+import com.wlk.android.club.database.DaoSession;
+import com.wlk.android.club.database.TestData;
+import com.wlk.android.club.database.TestDataDao;
 
 /**
  * Created by wanglunkui on 2018/1/18.

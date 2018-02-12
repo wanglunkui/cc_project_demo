@@ -1,4 +1,4 @@
-package com.wlk.android.job_club.ui;
+package com.wlk.android.club.ui;
 
 import android.app.Activity;
 import android.os.Build;

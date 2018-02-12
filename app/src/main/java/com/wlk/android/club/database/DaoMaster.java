@@ -1,4 +1,4 @@
-package com.wlk.android.job_club.database;
+package com.wlk.android.club.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

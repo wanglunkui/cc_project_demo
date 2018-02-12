@@ -30,6 +30,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="recyclerview" />
+                <Button
+                    android:id="@+id/btn_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="test3" />
             </LinearLayout>
 
             <FrameLayout
@@ -99,6 +104,49 @@
                         android:layout_height="match_parent" />
                 </android.support.v4.widget.SwipeRefreshLayout>
 
+                <FrameLayout
+                    android:id="@+id/layout_3"
+                    android:layout_width="match_parent"
+                    android:background="@android:color/white"
+                    android:layout_height="match_parent">
+
+                    <android.support.v4.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:fillViewport="true"
+                        android:layout_height="match_parent">
+                        <LinearLayout android:layout_width="match_parent"
+                            android:orientation="vertical"
+                            android:layout_height="100dp">
+                            <android.support.design.widget.TabLayout
+                                android:background="@android:color/holo_blue_light"
+                                android:id="@+id/tab"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"/>
+                            <android.support.v4.view.ViewPager
+                                android:background="@android:color/holo_green_light"
+                                android:id="@+id/view_pager"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp">
+                            </android.support.v4.view.ViewPager>
+
+                            <View
+                                android:background="@android:color/holo_orange_dark"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"/>
+                            <View
+                                android:background="@android:color/holo_red_dark"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"/>
+                        </LinearLayout>
+                    </android.support.v4.widget.NestedScrollView>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </FrameLayout>
             </FrameLayout>
         </FrameLayout>
 

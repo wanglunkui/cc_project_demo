@@ -1,4 +1,4 @@
-package com.wlk.android.job_club.ui;
+package com.wlk.android.club.ui;
 
 import android.animation.ObjectAnimator;
 import android.app.Activity;
@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
-import com.wlk.android.job_club.R;
+import com.wlk.android.club.R;
 
 /**
  * Created by wanglunkui on 2018/1/18.

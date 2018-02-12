@@ -1,4 +1,4 @@
-package com.wlk.android.job_club.ui;
+package com.wlk.android.club.ui;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.wlk.android.job_club.R;
+import com.wlk.android.club.R;
 
 import java.util.List;
 

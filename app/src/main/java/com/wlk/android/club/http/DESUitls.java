@@ -1,4 +1,4 @@
-package com.wlk.android.job_club.http;
+package com.wlk.android.club.http;
 
 import java.security.Key;
 import java.security.SecureRandom;

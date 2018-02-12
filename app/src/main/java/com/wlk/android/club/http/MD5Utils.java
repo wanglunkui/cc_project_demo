@@ -1,4 +1,4 @@
-package com.wlk.android.job_club.http;
+package com.wlk.android.club.http;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,14 +11,6 @@ import java.security.NoSuchAlgorithmException;
 /**
  * Created by wanglunkui on 2018/1/17.
  */
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 public class MD5Utils {
 

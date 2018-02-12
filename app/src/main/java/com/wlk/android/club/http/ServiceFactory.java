@@ -1,4 +1,4 @@
-package com.wlk.android.job_club.http;
+package com.wlk.android.club.http;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

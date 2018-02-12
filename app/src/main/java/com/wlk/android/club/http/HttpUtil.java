@@ -1,4 +1,4 @@
-package com.wlk.android.job_club.http;
+package com.wlk.android.club.http;
 
 import android.content.Context;
 import android.util.Log;

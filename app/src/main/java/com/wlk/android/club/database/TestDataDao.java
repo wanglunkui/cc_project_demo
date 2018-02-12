@@ -1,4 +1,4 @@
-package com.wlk.android.job_club.database;
+package com.wlk.android.club.database;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteStatement;

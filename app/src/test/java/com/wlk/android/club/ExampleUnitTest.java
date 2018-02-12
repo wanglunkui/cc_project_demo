@@ -1,4 +1,4 @@
-package com.wlk.android.job_club;
+package com.wlk.android.club;
 
 import org.junit.Test;
 

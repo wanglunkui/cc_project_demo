@@ -1,9 +1,8 @@
-package com.wlk.android.job_club.database;
+package com.wlk.android.club.database;
 
 import android.app.Application;
 import android.content.ContentResolver;
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 

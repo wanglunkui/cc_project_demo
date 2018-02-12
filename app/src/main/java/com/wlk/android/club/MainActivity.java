@@ -1,9 +1,13 @@
-package com.wlk.android.job_club;
+package com.wlk.android.club;
 
 import android.animation.ObjectAnimator;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,9 +20,9 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.wlk.android.job_club.http.HttpUtil;
-import com.wlk.android.job_club.ui.BaseActivity;
-import com.wlk.android.job_club.ui.RecyclerAdapter;
+import com.wlk.android.club.ui.BaseActivity;
+import com.wlk.android.club.ui.MyF;
+import com.wlk.android.club.ui.RecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,8 +52,38 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         recyclerView = findViewById(R.id.recycler_view);
         findViewById(R.id.btn_1).setOnClickListener(this);
         findViewById(R.id.btn_2).setOnClickListener(this);
+        findViewById(R.id.btn_3).setOnClickListener(this);
         initSlidingMenu();
         initFresco();
+    }
+
+    private void initViewPagerInsideScrollView(){
+        try{
+            TabLayout tab = findViewById(R.id.tab);
+            ViewPager viewPager = findViewById(R.id.view_pager);
+            final String[] titles = new String[]{"1","2"};
+            viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+                @Override
+                public Fragment getItem(int position) {
+                    return MyF.newInstance(position);
+                }
+
+                @Override
+                public int getCount() {
+                    return titles.length;
+                }
+
+                @Override
+                public CharSequence getPageTitle(int position) {
+                    return titles[position];
+                }
+            });
+            tab.setupWithViewPager(viewPager);
+
+        }catch (Exception e){
+            Log.w("wlk","", e);
+        }
+
     }
 
     private void initFresco(){
@@ -148,6 +182,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 initRecyclerView();
                 initData();
                 break;
+            case R.id.btn_3:
+                initViewPagerInsideScrollView();
+                break;
         }
     }
 
@@ -233,3 +270,5 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         adapter.notifyItemRemoved(adapter.getItemCount());
     }
 }
+
+

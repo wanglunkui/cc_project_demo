@@ -1,4 +1,4 @@
-package com.wlk.android.job_club.database;
+package com.wlk.android.club.database;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;

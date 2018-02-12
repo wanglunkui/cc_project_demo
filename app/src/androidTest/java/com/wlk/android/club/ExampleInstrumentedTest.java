@@ -1,4 +1,4 @@
-package com.wlk.android.job_club;
+package com.wlk.android.club;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

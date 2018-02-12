@@ -1,6 +1,5 @@
-package com.wlk.android.job_club.ui;
+package com.wlk.android.club.ui;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -14,7 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
-import com.wlk.android.job_club.R;
+import com.wlk.android.club.R;
 
 
 /**
@@ -22,12 +21,12 @@ import com.wlk.android.job_club.R;
  */
 
 public class BaseActivity extends RxAppCompatActivity {
-    View rootView;
-    FrameLayout contentFrameLayout;
-    Context mContext;
-    LayoutInflater inflater;
-    boolean hasToolbar;
-    LoadingDialog loadingDialog;
+    private View rootView;
+    private FrameLayout contentFrameLayout;
+    protected Context mContext;
+    private LayoutInflater inflater;
+    private boolean hasToolbar;
+    private LoadingDialog loadingDialog;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
